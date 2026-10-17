@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <defs>
+    <linearGradient id="chatify-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06b6d4" />
+      <stop offset="50%" stop-color="#3b82f6" />
+      <stop offset="100%" stop-color="#8b5cf6" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+  <!-- Background Glow Bubble -->
+  <rect x="8" y="8" width="84" height="84" rx="26" fill="url(#chatify-grad)" filter="url(#glow)" opacity="0.3" />
+  
+  <!-- Main Rounded Chat Bubble -->
+  <path d="M22 20C15.3726 20 10 25.3726 10 32V60C10 66.6274 15.3726 72 22 72H32L46 86V72H78C84.6274 72 90 66.6274 90 60V32C90 25.3726 84.6274 20 78 20H22Z" fill="url(#chatify-grad)"/>
+  
+  <!-- Interior Lightning / Conversation Spark -->
+  <path d="M54 32L34 50H48L44 64L66 44H50L54 32Z" fill="#FFFFFF" opacity="0.95"/>
+</svg>

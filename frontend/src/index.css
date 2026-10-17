@@ -1,0 +1,127 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@property --border-angle {
+  inherits: false;
+  initial-value: 0deg;
+  syntax: "<angle>";
+}
+
+:root,
+[data-theme="dark"],
+.dark {
+  color-scheme: dark;
+  --app-bg: #0b1120;
+  --grid-line: #4f4f4f24;
+  --panel-bg: rgba(30, 41, 59, 0.7);
+  --sidebar-bg: rgba(15, 23, 42, 0.75);
+  --chat-bg: rgba(15, 23, 42, 0.6);
+  --header-bg: rgba(30, 41, 59, 0.65);
+  --text-main: #f1f5f9;
+  --text-muted: #94a3b8;
+  --border-color: rgba(51, 65, 85, 0.6);
+  --input-bg: rgba(30, 41, 59, 0.7);
+  --bubble-other: #1e293b;
+  --bubble-other-text: #f1f5f9;
+  --bubble-me: #0891b2;
+  --bubble-me-text: #ffffff;
+  --card-bg: rgba(6, 182, 212, 0.08);
+  --card-hover: rgba(6, 182, 212, 0.18);
+  --container-bg-gradient: linear-gradient(45deg, #0f172a, #1e293b 50%, #0f172a);
+  --border-glow-outer: rgba(71, 85, 105, 0.5);
+  --modal-bg: #1e293b;
+}
+
+[data-theme="light"],
+.light {
+  color-scheme: light;
+  --app-bg: #f1f5f9;
+  --grid-line: #cbd5e140;
+  --panel-bg: rgba(255, 255, 255, 0.9);
+  --sidebar-bg: rgba(248, 250, 252, 0.95);
+  --chat-bg: rgba(255, 255, 255, 0.85);
+  --header-bg: rgba(255, 255, 255, 0.9);
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --border-color: rgba(226, 232, 240, 0.9);
+  --input-bg: rgba(241, 245, 249, 0.95);
+  --bubble-other: #f1f5f9;
+  --bubble-other-text: #1e293b;
+  --bubble-me: #06b6d4;
+  --bubble-me-text: #ffffff;
+  --card-bg: rgba(6, 182, 212, 0.06);
+  --card-hover: rgba(6, 182, 212, 0.14);
+  --container-bg-gradient: linear-gradient(45deg, #ffffff, #f8fafc 50%, #ffffff);
+  --border-glow-outer: rgba(203, 213, 225, 0.8);
+  --modal-bg: #ffffff;
+}
+
+body {
+  background-color: var(--app-bg);
+  color: var(--text-main);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.input {
+  width: 100%;
+  background-color: var(--input-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem 0.5rem 2.5rem;
+  color: var(--text-main);
+  transition: all 0.2s ease;
+}
+
+.input::placeholder {
+  color: var(--text-muted);
+}
+
+.input:focus {
+  outline: none;
+  border-color: #06b6d4;
+  box-shadow: 0 0 0 2px rgba(6, 182, 212, 0.3);
+}
+
+.auth-input-icon {
+  @apply absolute left-3 top-1/2 -translate-y-1/2 size-5;
+  color: var(--text-muted);
+}
+
+.auth-input-label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-main);
+  margin-bottom: 0.5rem;
+}
+
+.auth-badge {
+  @apply inline-flex items-center px-3 py-1 text-xs font-medium rounded-full bg-cyan-500/20 text-cyan-500;
+}
+
+.auth-btn {
+  @apply w-full bg-gradient-to-r from-cyan-500 to-cyan-600 text-white rounded-lg py-2.5 font-medium
+  hover:from-cyan-600 hover:to-cyan-700 focus:ring-2 focus:ring-cyan-500 transition-all shadow-md;
+}
+
+.auth-link {
+  @apply px-4 py-2 inline-block bg-cyan-500/10 rounded-lg text-cyan-500
+  hover:text-cyan-600 hover:bg-cyan-500/20 text-sm transition-colors;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #06b6d4;
+}
